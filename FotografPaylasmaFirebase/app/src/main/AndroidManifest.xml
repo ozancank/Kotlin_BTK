@@ -12,13 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FotografPaylasmaFirebase">
         <activity
-            android:name=".FotografPaylasmaActivity"
+            android:name=".view.FotografPaylasmaActivity"
             android:exported="false" />
         <activity
-            android:name=".HaberlerActivity"
+            android:name=".view.HaberlerActivity"
             android:exported="false" />
         <activity
-            android:name=".KullaniciActivity"
+            android:name=".view.KullaniciActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

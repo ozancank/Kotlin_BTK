@@ -1,4 +1,4 @@
-package com.ock.fotografpaylasmafirebase
+package com.ock.fotografpaylasmafirebase.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.ktx.Firebase
+import com.ock.fotografpaylasmafirebase.R
 import kotlinx.android.synthetic.main.activity_kullanici.*
 
 class KullaniciActivity : AppCompatActivity() {
