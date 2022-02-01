@@ -10,6 +10,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.ock.besinlerkitabi.R
 import com.ock.besinlerkitabi.model.Besin
+import com.ock.besinlerkitabi.util.gorselIndir
+import com.ock.besinlerkitabi.util.placeHolderYap
 import com.ock.besinlerkitabi.viewmodel.BesinDetayiViewModel
 import kotlinx.android.synthetic.main.fragment_besin_detayi.*
 
@@ -30,14 +32,12 @@ class BesinDetayiFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        viewModel = ViewModelProviders.of(this).get(BesinDetayiViewModel::class.java)
-        viewModel.roomVerisiniAl()
-
         arguments?.let {
             besinId = BesinDetayiFragmentArgs.fromBundle(it).besinId
-            println(besinId)
         }
+
+        viewModel = ViewModelProviders.of(this).get(BesinDetayiViewModel::class.java)
+        viewModel.roomVerisiniAl(besinId)
 
         observeLiveData()
     }
@@ -50,6 +50,9 @@ class BesinDetayiFragment : Fragment() {
                 besinKarbonhidrat.text = it.besinKarbonhidrat
                 besinProtein.text = it.besinProtein
                 besinYag.text = it.besinYag
+                context?.let {
+                    besinImage.gorselIndir(besin.besinGorsel, placeHolderYap(it))
+                }
             }
         })
     }
